@@ -192,7 +192,7 @@ function buildPortfolio() {
 
         // Dynamické načítanie obrázka presne podľa ID (z 'stone8' vytiahne '8')
         const stoneNum = item.id.replace('stone', '');
-        btn.style.backgroundImage = `url('stone${stoneNum}.svg')`;
+        btn.style.backgroundImage = `url('stone${stoneNum}.png')`;
 
         // Výpočet zväčšených rozmerov
         const w = item.size * scaleMultiplier;
