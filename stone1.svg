@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350">
+  <defs>
+    <radialGradient id="g1" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f8e9ff"/>
+      <stop offset="26%" stop-color="#d7b7dc"/>
+      <stop offset="64%" stop-color="#b778c6"/>
+      <stop offset="100%" stop-color="#7c3d87"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.24"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <g>
+    <path d="M60 60 C110 20, 190 12, 250 18 C360 26, 440 78, 456 148 C470 206, 455 256, 415 290 C361 332, 216 342, 128 326 C64 313, 20 268, 26 214 C34 154, 22 88, 60 60 Z" fill="url(#g1)"/>
+    <path d="M97 74 C145 52, 215 48, 270 57 C326 66, 380 91, 410 143 C370 124, 330 119, 297 126 C264 133, 231 151, 205 178 C176 155, 147 136, 119 122 C106 100, 98 87, 97 74 Z" fill="#f7f3ff" opacity="0.7"/>
+    <path d="M146 116 C184 160, 218 189, 245 216 C232 250, 196 283, 164 286 C102 293, 57 243, 67 190 C76 150, 109 125, 146 116 Z" fill="#d9a9e5" opacity="0.4"/>
+    <path d="M308 98 C348 118, 392 145, 404 177 C375 175, 351 187, 334 209 C305 238, 274 254, 243 256 C260 207, 281 144, 308 98 Z" fill="#f6d7ff" opacity="0.3"/>
+    <ellipse cx="250" cy="175" rx="175" ry="120" fill="#f5f5f5" opacity="0.18" filter="url(#grain)"/>
+    <path d="M145 93 C170 97, 197 109, 214 125 C235 144, 252 170, 258 193 C230 164, 191 152, 167 140 C153 122, 146 103, 145 93 Z" fill="#ffffff" opacity="0.46"/>
+    <path d="M245 88 C286 90, 337 109, 360 140 C380 165, 387 201, 378 226 C318 205, 283 189, 260 176 C242 166, 230 128, 245 88 Z" fill="#ffffff" opacity="0.32"/>
+    <path d="M125 190 C160 214, 190 240, 204 260 C164 274, 119 272, 82 251 C99 228, 113 205, 125 190 Z" fill="#ffffff" opacity="0.26"/>
+    <path d="M258 215 C282 204, 325 205, 356 218 C337 256, 314 274, 285 280 C268 267, 258 243, 258 215 Z" fill="#ffffff" opacity="0.2"/>
+    <ellipse cx="250" cy="175" rx="176" ry="120" fill="none" stroke="#f7f2ff" stroke-opacity="0.7" stroke-width="2"/>
+  </g>
+</svg>

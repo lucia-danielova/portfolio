@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350">
+  <defs>
+    <radialGradient id="g8" cx="35%" cy="28%" r="72%">
+      <stop offset="0%" stop-color="#fffdfd"/>
+      <stop offset="20%" stop-color="#f0dfe9"/>
+      <stop offset="58%" stop-color="#d0a8c8"/>
+      <stop offset="100%" stop-color="#8d5f89"/>
+    </radialGradient>
+    <filter id="grain8">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="88"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.28"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <g>
+    <path d="M64 63 C115 20, 209 17, 272 21 C367 30, 441 81, 454 149 C465 215, 437 267, 391 297 C322 340, 198 342, 129 321 C71 304, 25 266, 25 201 C24 155, 31 107, 64 63 Z" fill="url(#g8)"/>
+    <path d="M97 97 C148 71, 222 69, 282 81 C341 94, 397 129, 408 180 C333 169, 291 176, 252 192 C214 208, 173 220, 135 218 C99 216, 71 173, 97 97 Z" fill="#fff7fc" opacity="0.72"/>
+    <path d="M144 127 C178 151, 196 181, 198 208 C170 235, 134 247, 101 243 C87 214, 95 165, 144 127 Z" fill="#e3bfd8" opacity="0.4"/>
+    <path d="M316 99 C351 120, 390 149, 399 180 C365 177, 338 191, 319 212 C293 237, 263 254, 244 256 C247 206, 275 149, 316 99 Z" fill="#fff7ff" opacity="0.3"/>
+    <ellipse cx="250" cy="176" rx="177" ry="121" fill="#fff8ff" opacity="0.16" filter="url(#grain8)"/>
+    <path d="M236 95 C281 111, 325 136, 344 167 C327 188, 292 206, 267 207 C246 166, 237 127, 236 95 Z" fill="#ffffff" opacity="0.2"/>
+    <ellipse cx="250" cy="176" rx="176" ry="121" fill="none" stroke="#fdf1ff" stroke-opacity="0.8" stroke-width="2"/>
+  </g>
+</svg>
