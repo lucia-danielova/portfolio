@@ -1,4 +1,4 @@
-// Kompletná konfigurácia 9 kameňov s tvojimi presnými pozíciami, nápismi a rozšíreným obsahom
+// Konfigurácia 9 kameňov s presnými súradnicami a SVG formátom súborov z GitHubu
 const stoneConfig = [
     { 
         id: 'stone8', 
@@ -22,7 +22,7 @@ const stoneConfig = [
         subtitle: 'Krok 6',
         title: 'Grafický Dizajn',
         desc: 'Vektorová grafika v Adobe Illustrator, tvorba vlastných vizuálnych prvkov, práca s vrstvami a príprava SVG/PNG podkladov pre moderný web.',
-        tags: ['Adobe Illustrator', 'SVG Grafika', 'PNG Export', 'Vizuálna Identita', 'Typografia']
+        tags: ['Adobe Illustrator', 'SVG Grafika', 'Vizuálna Identita', 'Typografia']
     },
     { 
         id: 'stone1', 
@@ -123,19 +123,14 @@ const modalTags = document.getElementById('modal-tags');
 const modalAction = document.getElementById('modal-action');
 const closeBtn = document.getElementById('close-btn');
 
-// Predpokladaný pomer strán tvojho obrázka kameňa
 const stoneRatio = 1.5; 
-
-// Zväčšenie kameňov, aby sa do nich pohodlne zmestil text
 const scaleMultiplier = 1.4;
 
-// Funkcia na otvorenie modálneho okna s kompletným obsahom
 function openModal(item, buttonElement) {
     modalSubtitle.innerText = item.subtitle || 'Sekcia portfólia';
     modalTitle.innerText = item.title || item.label;
     modalDesc.innerText = item.desc || `Obsah pre sekciu ${item.label}`;
 
-    // Vykreslenie štítkov (tagov)
     modalTags.innerHTML = '';
     if (item.tags && item.tags.length > 0) {
         item.tags.forEach(tagText => {
@@ -146,7 +141,6 @@ function openModal(item, buttonElement) {
         });
     }
 
-    // Vykreslenie akčného tlačidla (ak je definované, napr. pri Kontakte alebo Projektoch)
     modalAction.innerHTML = '';
     if (item.actionText && item.actionLink) {
         const link = document.createElement('a');
@@ -160,7 +154,6 @@ function openModal(item, buttonElement) {
         modalAction.appendChild(link);
     }
 
-    // Označenie kameňa ako navštíveného
     if (buttonElement) {
         buttonElement.classList.add('visited');
     }
@@ -169,13 +162,11 @@ function openModal(item, buttonElement) {
     modalOverlay.setAttribute('aria-hidden', 'false');
 }
 
-// Funkcia na zatvorenie modálneho okna
 function closeModal() {
     modalOverlay.classList.remove('active');
     modalOverlay.setAttribute('aria-hidden', 'true');
 }
 
-// Vykreslenie všetkých 9 kameňov na scénu
 function buildPortfolio() {
     stage.innerHTML = '';
 
@@ -190,11 +181,10 @@ function buildPortfolio() {
         textSpan.innerText = item.label;
         btn.appendChild(textSpan);
 
-        // Dynamické načítanie obrázka presne podľa ID (z 'stone8' vytiahne '8')
+        // Načítanie súborov s koncovkou .svg presne podľa tvojho GitHubu
         const stoneNum = item.id.replace('stone', '');
-        btn.style.backgroundImage = `url('stone${stoneNum}.png')`;
+        btn.style.backgroundImage = `url('stone${stoneNum}.svg')`;
 
-        // Výpočet zväčšených rozmerov
         const w = item.size * scaleMultiplier;
         const h = w * stoneRatio;
 
@@ -203,25 +193,19 @@ function buildPortfolio() {
         btn.style.left = `${item.left}%`;
         btn.style.bottom = `${item.bottom}%`;
         
-        // Rotácia kameňa (90 stupňov + kompozičná rotácia)
         const divRotation = 90 + item.rotate;
         btn.style.setProperty('--rot', `${divRotation}deg`);
         
-        // Rotácia textu (kompenzácia, aby bol text rovno)
         const spanRotation = -divRotation;
         textSpan.style.transform = `rotate(${spanRotation}deg)`;
 
-        // Spustenie úvodnej animácie
         btn.style.animation = `stoneAppear 0.6s ease-out ${index * 0.1}s forwards`;
 
-        // Zapnutie vznášania po načítaní
         setTimeout(() => {
             btn.classList.add('is-floating');
         }, (index * 100) + 600);
 
-        // Akcia po kliknutí
         btn.addEventListener('click', () => {
-            console.log(`Kliknuté na sekciu: ${item.label}`);
             openModal(item, btn);
         });
 
@@ -229,7 +213,6 @@ function buildPortfolio() {
     });
 }
 
-// Zatváranie modálneho okna krížikom, kliknutím mimo alebo klávesou Escape
 closeBtn.addEventListener('click', closeModal);
 
 window.addEventListener('click', (event) => {
@@ -244,5 +227,4 @@ window.addEventListener('keydown', (event) => {
     }
 });
 
-// Spustenie po načítaní stránky
 window.onload = buildPortfolio;
