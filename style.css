@@ -1,5 +1,5 @@
 :root {
-    /* Načítavame podklad z lokálneho adresára */
+    /* Načítavame podklad3.svg priamo z GitHub repozitára */
     --bg-image: url('podklad3.svg');
     --primary-accent: #6366f1;
     --primary-accent-hover: #4f46e5;
@@ -332,49 +332,23 @@ body, html {
     box-shadow: 0 12px 24px rgba(99, 102, 241, 0.45);
 }
 
-/* ==========================================
-   RESPONZIVITA PRE MENŠIE OBRAZOVKY
-   ========================================== */
+/* Responzivita */
 @media (max-width: 1200px) {
-    .stone-btn span {
-        font-size: 13px;
-    }
+    .stone-btn span { font-size: 13px; }
 }
 
 @media (max-width: 1024px) {
-    .site-header {
-        top: 14px;
-        left: 14px;
-        padding: 12px 18px;
-    }
-    .site-header h1 {
-        font-size: 18px;
-    }
-    .stone-btn span {
-        font-size: 11px;
-    }
+    .site-header { top: 14px; left: 14px; padding: 12px 18px; }
+    .site-header h1 { font-size: 18px; }
+    .stone-btn span { font-size: 11px; }
 }
 
 @media (max-width: 768px) {
-    .site-header {
-        padding: 10px 14px;
-    }
-    .site-header h1 {
-        font-size: 16px;
-    }
-    .site-header p {
-        display: none;
-    }
-    .stone-btn span {
-        font-size: 9px;
-    }
-    .modal-content {
-        padding: 30px 24px;
-    }
-    .modal-body h2 {
-        font-size: 22px;
-    }
-    .modal-body p {
-        font-size: 14px;
-    }
+    .site-header { padding: 10px 14px; }
+    .site-header h1 { font-size: 16px; }
+    .site-header p { display: none; }
+    .stone-btn span { font-size: 9px; }
+    .modal-content { padding: 30px 24px; }
+    .modal-body h2 { font-size: 22px; }
+    .modal-body p { font-size: 14px; }
 }
